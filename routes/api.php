@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -15,3 +16,7 @@ Route::get('/user', function (Request $request) {
 //         return $this->ok('API is working');
 //     }
 // })->run());   
+
+Route::get('products', function () {
+    return Product::all();
+});
